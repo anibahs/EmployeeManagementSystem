@@ -6,6 +6,7 @@ package com.ems.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JTextField;
 
 /**
  *
@@ -13,8 +14,8 @@ import java.util.Date;
  */
 public class Employee {
     private String Name;
-    private Integer EmployeeId;
-    private Integer Age;
+    private String EmployeeId;
+    private String Age;
     private String Gender;
     private Date StartDate;
     private String Level;
@@ -31,11 +32,21 @@ public class Employee {
         this.Name = Name;
     }
 
-    public Integer getAge() {
+
+    public String getEmployeeId() {
+        return EmployeeId;
+    }
+
+    public void setEmployeeId(String EmployeeId) {
+        this.EmployeeId = EmployeeId;
+    }
+
+
+    public String getAge() {
         return Age;
     }
 
-    public void setAge(Integer Age) {
+    public void setAge(String Age) {
         this.Age = Age;
     }
 
