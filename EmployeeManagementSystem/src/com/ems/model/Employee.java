@@ -16,10 +16,13 @@ public class Employee {
     private int Age;
     private String Gender;
     private String StartDate;
-    private int Level;
+    private String Level;
     private String TeamInfo;
     private String PositionTitle;
-    private ArrayList<String> ContactInfo;
+//    public class ContactInfo{
+//        private String PhoneNumber;
+//        private String EmailAddress;
+//    }
     private String Photo;
 
     public String getName() {
@@ -64,11 +67,11 @@ public class Employee {
         this.StartDate = StartDate;
     }
 
-    public int getLevel() {
+    public String getLevel() {
         return Level;
     }
 
-    public void setLevel(int Level) {
+    public void setLevel(String Level) {
         this.Level = Level;
     }
 
@@ -80,13 +83,13 @@ public class Employee {
         this.PositionTitle = PositionTitle;
     }
 
-    public ArrayList getContactInfo() {
-        return ContactInfo;
-    }
-
-    public void setContactInfo(ArrayList ContactInfo) {
-        this.ContactInfo = ContactInfo;
-    }
+//    public ArrayList getContactInfo() {
+//        return ContactInfo;
+//    }
+//
+//    public void setContactInfo(ArrayList ContactInfo) {
+//        this.ContactInfo = ContactInfo;
+//    }
 
     public String getPhoto() {
         return Photo;
@@ -101,4 +104,11 @@ public class Employee {
         return Name;
     }
     
+    public String getTeamInfo() {
+        return TeamInfo;
+    }
+
+    public void setTeamInfo(String TeamInfo) {
+        this.TeamInfo = TeamInfo;
+    }
 }

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class EmployeeDirectory {
 
     private ArrayList<Employee> directory;
-
+    
     public EmployeeDirectory() {
         this.directory = new ArrayList<Employee>();
     }    
@@ -28,11 +28,31 @@ public class EmployeeDirectory {
     
     public Employee addNewEmployee() {
         Employee newEmployee = new Employee();
+        newEmployee.setEmployeeId(directory.size()+1);
         directory.add(newEmployee);
         return newEmployee;
     }
 
     public void deleteEmployee(Employee employee) {
         directory.remove(employee);
+    }
+
+    public void updateEmployee(Employee selectedEmployee, Employee updatedEmployee) {
+        if(selectedEmployee.equals(updatedEmployee)){
+            //do nothing
+        }else{
+            if(!selectedEmployee.getName().equals(updatedEmployee.getName())){
+                selectedEmployee.setName(updatedEmployee.getName());
+            }
+            if(selectedEmployee.getEmployeeId()!= updatedEmployee.getEmployeeId()){
+                //selectedEmployee.setEmployeeId(updatedEmployee.getEmployeeId());
+            }
+            if(selectedEmployee.getAge() != updatedEmployee.getAge()){
+                selectedEmployee.setAge(updatedEmployee.getAge());
+            }
+            if(!selectedEmployee.getGender().equals(updatedEmployee.getGender())){
+                selectedEmployee.setGender(updatedEmployee.getGender());
+            }
+        }
     }
 }
