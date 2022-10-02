@@ -5,8 +5,6 @@
 package com.ems.model;
 
 import java.util.ArrayList;
-import java.util.Date;
-import javax.swing.JTextField;
 
 /**
  *
@@ -14,14 +12,14 @@ import javax.swing.JTextField;
  */
 public class Employee {
     private String Name;
-    private String EmployeeId;
-    private String Age;
+    private int EmployeeId;
+    private int Age;
     private String Gender;
-    private Date StartDate;
-    private String Level;
+    private String StartDate;
+    private int Level;
     private String TeamInfo;
     private String PositionTitle;
-    private ArrayList ContactInfo;
+    private ArrayList<String> ContactInfo;
     private String Photo;
 
     public String getName() {
@@ -33,20 +31,20 @@ public class Employee {
     }
 
 
-    public String getEmployeeId() {
+    public int getEmployeeId() {
         return EmployeeId;
     }
 
-    public void setEmployeeId(String EmployeeId) {
+    public void setEmployeeId(int EmployeeId) {
         this.EmployeeId = EmployeeId;
     }
 
 
-    public String getAge() {
+    public int getAge() {
         return Age;
     }
 
-    public void setAge(String Age) {
+    public void setAge(int Age) {
         this.Age = Age;
     }
 
@@ -58,19 +56,19 @@ public class Employee {
         this.Gender = Gender;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return StartDate;
     }
 
-    public void setStartDate(Date StartDate) {
+    public void setStartDate(String StartDate) {
         this.StartDate = StartDate;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return Level;
     }
 
-    public void setLevel(String Level) {
+    public void setLevel(int Level) {
         this.Level = Level;
     }
 
@@ -98,6 +96,9 @@ public class Employee {
         this.Photo = Photo;
     }
     
-    
+    @Override
+    public String toString(){
+        return Name;
+    }
     
 }
