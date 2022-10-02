@@ -4,17 +4,27 @@
  */
 package com.ems.view;
 
+import com.ems.model.Employee;
+import com.ems.model.EmployeeDirectory;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JSplitPane;
+
 /**
  *
  * @author Shabina
  */
+
 public class SearchJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form SearchJPanel
      */
-    public SearchJPanel() {
+    EmployeeDirectory directory;
+    ViewEmployeeJPanel viewEmployeeJPanel;
+    public SearchJPanel(JSplitPane splitPane, EmployeeDirectory directory) {
         initComponents();
+        this.directory = directory;
     }
 
     /**
@@ -28,56 +38,89 @@ public class SearchJPanel extends javax.swing.JPanel {
 
         tabbedPaneSearchEmployee = new javax.swing.JTabbedPane();
         pnlSearchByName = new javax.swing.JPanel();
-        btnSearch = new javax.swing.JButton();
+        pnSearchNameEmployee = new javax.swing.JSplitPane();
+        jPanel1 = new javax.swing.JPanel();
         lblFilterName = new javax.swing.JLabel();
+        btnSearchName = new javax.swing.JButton();
         txtFilterName = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
         pnlSearchByEmployeeId = new javax.swing.JPanel();
-        lblFilterEmployeeId = new javax.swing.JLabel();
-        btnSearch1 = new javax.swing.JButton();
+        pnSearchIdEmployee = new javax.swing.JSplitPane();
+        jPanel3 = new javax.swing.JPanel();
         txtFilterEmployeeId = new javax.swing.JTextField();
+        btnSearchId = new javax.swing.JButton();
+        lblFilterEmployeeId = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
-        viewJPanel = new javax.swing.JPanel();
 
-        btnSearch.setText("Search");
+        pnSearchNameEmployee.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
         lblFilterName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblFilterName.setText("Name:");
+
+        btnSearchName.setText("Search");
+        btnSearchName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchNameActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(lblFilterName, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtFilterName, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
+                .addComponent(btnSearchName)
+                .addGap(24, 24, 24))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSearchName)
+                    .addComponent(lblFilterName)
+                    .addComponent(txtFilterName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnSearchNameEmployee.setTopComponent(jPanel1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 607, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        pnSearchNameEmployee.setRightComponent(jPanel2);
 
         javax.swing.GroupLayout pnlSearchByNameLayout = new javax.swing.GroupLayout(pnlSearchByName);
         pnlSearchByName.setLayout(pnlSearchByNameLayout);
         pnlSearchByNameLayout.setHorizontalGroup(
             pnlSearchByNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlSearchByNameLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(lblFilterName, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(txtFilterName, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addComponent(btnSearch)
-                .addGap(64, 64, 64))
+            .addComponent(pnSearchNameEmployee)
         );
         pnlSearchByNameLayout.setVerticalGroup(
             pnlSearchByNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSearchByNameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlSearchByNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSearch)
-                    .addComponent(lblFilterName)
-                    .addComponent(txtFilterName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addComponent(pnSearchNameEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tabbedPaneSearchEmployee.addTab("Search By Name", pnlSearchByName);
 
-        lblFilterEmployeeId.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblFilterEmployeeId.setText("Employee ID:");
-
-        btnSearch1.setText("Search");
-        btnSearch1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearch1ActionPerformed(evt);
-            }
-        });
+        pnSearchIdEmployee.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
         txtFilterEmployeeId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,28 +128,70 @@ public class SearchJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnSearchId.setText("Search");
+        btnSearchId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchIdActionPerformed(evt);
+            }
+        });
+
+        lblFilterEmployeeId.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblFilterEmployeeId.setText("Employee ID:");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(lblFilterEmployeeId, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtFilterEmployeeId, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                .addComponent(btnSearchId)
+                .addGap(24, 24, 24))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFilterEmployeeId)
+                    .addComponent(txtFilterEmployeeId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearchId))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnSearchIdEmployee.setTopComponent(jPanel3);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 588, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        pnSearchIdEmployee.setRightComponent(jPanel4);
+
         javax.swing.GroupLayout pnlSearchByEmployeeIdLayout = new javax.swing.GroupLayout(pnlSearchByEmployeeId);
         pnlSearchByEmployeeId.setLayout(pnlSearchByEmployeeIdLayout);
         pnlSearchByEmployeeIdLayout.setHorizontalGroup(
             pnlSearchByEmployeeIdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlSearchByEmployeeIdLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(lblFilterEmployeeId, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(txtFilterEmployeeId, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addComponent(btnSearch1)
-                .addGap(64, 64, 64))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSearchByEmployeeIdLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnSearchIdEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
+                .addContainerGap())
         );
         pnlSearchByEmployeeIdLayout.setVerticalGroup(
             pnlSearchByEmployeeIdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSearchByEmployeeIdLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlSearchByEmployeeIdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSearch1)
-                    .addComponent(lblFilterEmployeeId)
-                    .addComponent(txtFilterEmployeeId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addComponent(pnSearchIdEmployee)
+                .addContainerGap())
         );
 
         tabbedPaneSearchEmployee.addTab("Search By Employee Id", pnlSearchByEmployeeId);
@@ -114,17 +199,6 @@ public class SearchJPanel extends javax.swing.JPanel {
         lblTitle.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Search Employee");
-
-        javax.swing.GroupLayout viewJPanelLayout = new javax.swing.GroupLayout(viewJPanel);
-        viewJPanel.setLayout(viewJPanelLayout);
-        viewJPanelLayout.setHorizontalGroup(
-            viewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        viewJPanelLayout.setVerticalGroup(
-            viewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 257, Short.MAX_VALUE)
-        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -135,12 +209,8 @@ public class SearchJPanel extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(viewJPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tabbedPaneSearchEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 6, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addComponent(tabbedPaneSearchEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(587, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,32 +219,64 @@ public class SearchJPanel extends javax.swing.JPanel {
                 .addComponent(lblTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tabbedPaneSearchEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(viewJPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(666, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSearchNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchNameActionPerformed
+
+        for(Employee employee : directory.getDirectory()){
+            System.out.println(employee.getName());
+            System.out.println(txtFilterName.getText());
+            if(employee.getName().equals(txtFilterName.getText())){
+                viewEmployeeJPanel = new ViewEmployeeJPanel();
+                pnSearchNameEmployee.setRightComponent(viewEmployeeJPanel);
+                viewEmployeeJPanel.populateEmployeeFields(employee);
+                return;
+            }
+        }
+        
+        JOptionPane.showMessageDialog(this, "Error : Employee not found. Please try again.");
+        
+    }//GEN-LAST:event_btnSearchNameActionPerformed
+
+    private void btnSearchIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchIdActionPerformed
+
+        for(Employee employee : directory.getDirectory()){
+            System.out.println(employee.getEmployeeId());
+            System.out.println(txtFilterEmployeeId.getText());
+            if((Integer.toString(employee.getEmployeeId())).equals(txtFilterEmployeeId.getText())){
+                viewEmployeeJPanel = new ViewEmployeeJPanel();
+                pnSearchIdEmployee.setRightComponent(viewEmployeeJPanel);
+                viewEmployeeJPanel.populateEmployeeFields(employee);
+                return;
+            }
+        }
+
+        JOptionPane.showMessageDialog(this, "Error : Employee not found. Please try again.");
+    }//GEN-LAST:event_btnSearchIdActionPerformed
 
     private void txtFilterEmployeeIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFilterEmployeeIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFilterEmployeeIdActionPerformed
 
-    private void btnSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearch1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSearch;
-    private javax.swing.JButton btnSearch1;
+    private javax.swing.JButton btnSearchId;
+    private javax.swing.JButton btnSearchName;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lblFilterEmployeeId;
     private javax.swing.JLabel lblFilterName;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JSplitPane pnSearchIdEmployee;
+    private javax.swing.JSplitPane pnSearchNameEmployee;
     private javax.swing.JPanel pnlSearchByEmployeeId;
     private javax.swing.JPanel pnlSearchByName;
     private javax.swing.JTabbedPane tabbedPaneSearchEmployee;
     private javax.swing.JTextField txtFilterEmployeeId;
     private javax.swing.JTextField txtFilterName;
-    private javax.swing.JPanel viewJPanel;
     // End of variables declaration//GEN-END:variables
 }

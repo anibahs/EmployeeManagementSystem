@@ -4,7 +4,6 @@
  */
 package com.ems.model;
 
-import java.util.ArrayList;
 
 /**
  *
@@ -19,10 +18,24 @@ public class Employee {
     private String Level;
     private String TeamInfo;
     private String PositionTitle;
-//    public class ContactInfo{
-//        private String PhoneNumber;
-//        private String EmailAddress;
-//    }
+    private String PhoneNumber;
+    private String EmailAddress;
+
+    public String getPhoneNumber() {
+        return PhoneNumber;
+    }
+
+    public void setPhoneNumber(String PhoneNumber) {
+        this.PhoneNumber = PhoneNumber;
+    }
+
+    public String getEmailAddress() {
+        return EmailAddress;
+    }
+
+    public void setEmailAddress(String EmailAddress) {
+        this.EmailAddress = EmailAddress;
+    }
     private String Photo;
 
     public String getName() {
