@@ -31,18 +31,18 @@
                               </Group>
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtName" alignment="0" pref="175" max="32767" attributes="0"/>
-                                  <Component id="txtEmployeeId" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtAge" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtGender" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtName" linkSize="3" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <Component id="txtEmployeeId" linkSize="3" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <Component id="txtAge" linkSize="3" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                  <Component id="txtGender" linkSize="3" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="lblStartDate" min="-2" pref="84" max="-2" attributes="0"/>
                               <EmptySpace pref="35" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtPhoto" pref="175" max="32767" attributes="0"/>
-                                  <Component id="txtStartDate" max="32767" attributes="0"/>
+                                  <Component id="txtPhoto" linkSize="3" pref="175" max="32767" attributes="0"/>
+                                  <Component id="txtStartDate" linkSize="3" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -58,12 +58,14 @@
                   <Component id="lblEmailAddress" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="txtLevel" alignment="0" pref="175" max="32767" attributes="0"/>
-                  <Component id="txtTeamInfo" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtPositionTitle" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtEmailAddress" max="32767" attributes="0"/>
-                  <Component id="txtPhoneNumber" alignment="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="txtPhoneNumber" min="-2" pref="175" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="txtLevel" alignment="0" pref="175" max="32767" attributes="0"/>
+                      <Component id="txtTeamInfo" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtPositionTitle" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="txtEmailAddress" min="-2" pref="175" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="1253" max="32767" attributes="0"/>
           </Group>
@@ -118,12 +120,12 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblPhoto1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtEmailAddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtPhoneNumber" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtPhoneNumber" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblEmailAddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEmailAddress" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
