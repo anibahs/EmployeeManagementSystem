@@ -37,6 +37,8 @@ public class EmployeeDirectory {
         directory.remove(employee);
     }
 
+    
+    
     public void updateEmployee(Employee selectedEmployee, Employee updatedEmployee) {
         if(selectedEmployee.equals(updatedEmployee)){
             //do nothing
@@ -45,13 +47,25 @@ public class EmployeeDirectory {
                 selectedEmployee.setName(updatedEmployee.getName());
             }
             if(selectedEmployee.getEmployeeId()!= updatedEmployee.getEmployeeId()){
-                //selectedEmployee.setEmployeeId(updatedEmployee.getEmployeeId());
+                //not allowed
             }
             if(selectedEmployee.getAge() != updatedEmployee.getAge()){
                 selectedEmployee.setAge(updatedEmployee.getAge());
             }
             if(!selectedEmployee.getGender().equals(updatedEmployee.getGender())){
                 selectedEmployee.setGender(updatedEmployee.getGender());
+            }
+            if(!selectedEmployee.getLevel().equals(updatedEmployee.getLevel())){
+                selectedEmployee.setLevel(updatedEmployee.getLevel());
+            }
+            if(!selectedEmployee.getTeamInfo().equals(updatedEmployee.getTeamInfo())){
+                selectedEmployee.setTeamInfo(updatedEmployee.getTeamInfo());
+            }
+            if(!selectedEmployee.getPositionTitle().equals(updatedEmployee.getPositionTitle())){
+                selectedEmployee.setPositionTitle(updatedEmployee.getPositionTitle());
+            }
+            if(!selectedEmployee.getPhoneNumber().equals(updatedEmployee.getPhoneNumber())){
+                selectedEmployee.setPhoneNumber(updatedEmployee.getPhoneNumber());
             }
         }
     }

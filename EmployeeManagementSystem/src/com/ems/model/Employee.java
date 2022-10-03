@@ -4,6 +4,8 @@
  */
 package com.ems.model;
 
+import java.util.regex.Pattern;
+
 
 /**
  *
@@ -123,5 +125,12 @@ public class Employee {
 
     public void setTeamInfo(String TeamInfo) {
         this.TeamInfo = TeamInfo;
+    }
+    
+    public boolean validateEmailAddress(String EmailAddress){
+        
+        String regexPattern = "^(.+)@(\\S+)$";
+        Pattern.compile(regexPattern).matcher(EmailAddress).matches();
+        return Pattern.compile(regexPattern).matcher(EmailAddress).matches();
     }
 }
